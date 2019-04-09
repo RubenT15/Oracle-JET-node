@@ -1,0 +1,32 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Listado de productos</h1>
+  <div id="menu" style="display:block">
+  <oj-data-grid id="datagrid" 
+            style="width:100%;max-width:720px;height:400px;" 
+            aria-label="Data Grid Cell Based Grid Demo" 
+            data="[[dataSource]]"
+            header.column.style="[[columnHeaderStyle]]"
+            header.column.resizable.width="enable"
+            header.column.renderer="[[oj.KnockoutTemplateUtils.getRenderer('header_template')]]"
+            >
+        </oj-data-grid>
+      <script type="text/html" id="header_template">
+            <!-- ko if: $context.key=='0' -->
+                <span data-bind="text: 'Código'"></span>
+            <!-- /ko -->
+            <!-- ko if: $context.key=='1' -->
+                <span data-bind="text: 'Descripción'"></span>
+            <!-- /ko -->
+            <!-- ko if: $context.key=='2' -->
+                <span data-bind="text: 'Precio'"></span>
+            <!-- /ko -->
+            <!-- ko if: $context.key=='3' -->
+                <span data-bind="text: 'Fecha de fab.'"></span>
+            <!-- /ko -->
+        </script>
+  </div>
+</div>

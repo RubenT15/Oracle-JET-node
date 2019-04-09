@@ -1,0 +1,17 @@
+{
+    "name": "RESTfulAPI",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "^1.13.2",
+        "connect-busboy": "0.0.2",
+        "cors": "^2.8.5",
+        "dateformat": "^3.0.3",
+        "express": "^4.16.4",
+        "express-fileupload": "^1.1.4",
+        "fs-extra": "^7.0.1",
+        "inspect": "0.0.2",
+        "method-override": "^2.1.2",
+        "oracledb": "^3.1.2",
+        "path": "^0.12.7"
+    }
+}
