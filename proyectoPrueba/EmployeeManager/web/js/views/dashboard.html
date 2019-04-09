@@ -1,0 +1,72 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+    <nav>
+        <oj-button id='btnProducto' on-oj-action='[[clickProducto]]'>Insertar producto</oj-button>
+        <oj-button id='btnRegistrar' on-oj-action='[[clickEmpleado]]'>Registrar empleado</oj-button>
+    </nav>
+    <div id="formProducto" style="display:none">
+        <h1>Insertar nuevo producto</h1>
+        <div id="popupWrapper">
+            <oj-popup id="popup1" style="display:none">
+               <span>Producto insertado con éxito</span>
+            </oj-popup>
+            <div id="inputNombre">
+                <oj-label for="nomProducto">Nombre del producto</oj-label>
+                <oj-input-text id="nomProducto" value="{{nomValue}}"></oj-input-text>
+            </div>
+            <div id="inputPu">
+                <oj-label for="puProducto">Precio del producto</oj-label>
+                <oj-input-number id="puProducto" value="{{puValue}}"></oj-input-number>
+            </div>
+            <div id="inputDate">
+                <oj-label for="fecfabProducto">Fecha de fabricación del producto</oj-label>
+                <oj-input-date id="fecfabProducto" value='{{dateValue}}'>
+                </oj-input-date>
+            </div>
+            <oj-button id="submit" on-oj-action="[[submitListener]]">Enviar</oj-button>
+        </div>
+    </div>
+    <div id="formEmpleado" style="display:none">
+        <h1>Registrar empleado</h1>
+  <div id="popupWrapper">
+          <oj-popup id="popup2" style="display:none">
+            <span>Empleado registrado con éxito</span>
+          </oj-popup>
+      <div id="inputNomEmpleado">
+                <oj-label for="nomEmpleado">Nombre del empleado</oj-label>
+                <oj-input-text id="nomEmpleado" value="{{nomEmpValue}}"></oj-input-text>
+      </div>
+      <div id="inputTituloEmpleado">
+                <oj-label for="tituloEmpleado">Puesto empleado</oj-label>
+                <oj-input-text id="tituloEmpleado" value="{{tituloValue}}"></oj-input-text>
+      </div>
+      <div id="inputTlfEmpleado">
+                <oj-label for="tlfEmpleado">Telefono del empleado</oj-label>
+                <oj-input-number id="tlfEmpleado" value="{{tlfValue}}"></oj-input-number>
+            </div>
+      <div id="inputCorreoEmpleado">
+                <oj-label for="correoEmpleado">Correo del empleado</oj-label>
+                <oj-input-text id="correoEmpleado" value="{{correoValue}}"></oj-input-text>
+      </div>
+      <div id="inputAvatarEmpleado">
+                <oj-label for="avatarEmpleado">Foto del empleado</oj-label>
+                <oj-file-picker id="avatarEmpleado" accept="[[acceptArr]]" selection-mode="single" on-oj-select='[[avatarListener]]'>
+                    <div tabindex='0' slot='trigger'
+                  class='oj-filepicker-dropzone'>
+               <p class='oj-filepicker-text'>Arrastra tu archivo o haz click para elegir foto</p>
+            </div>
+          </oj-file-picker>
+                <div style="padding-top:8px">
+            <oj-label for="selected">Archivo seleccionado: </oj-label>
+            <span id="selected">
+              <oj-bind-text value="[[ko.toJSON(fileNames)]]"></oj-bind-text>
+            </span>
+          </div>
+      </div>
+      <oj-button id="register" on-oj-action="[[registerListener]]">Enviar</oj-button>
+      </div>
+    </div>
+</div>
