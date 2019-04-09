@@ -7,12 +7,60 @@
  * Your incidents ViewModel code goes here
  */
 define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojbutton','ojs/ojknockout', 
-  'viewModels/jet-composites/calendar/loader'],
+  'viewModels/jet-composites/calendar/loader','ojs/ojlegend'],
  function(oj, ko, $) {
   
   
     function IncidentsViewModel() {
       var self = this;
+      self.data=[
+    {
+        name:"Ruben_Garcia_Tercero",
+        days:[
+            "2019/4/15",
+            "2019/4/16",
+            "2019/4/17",
+            "2019/4/18",
+            "2019/4/19",
+            "2019/4/22"
+        ],
+        color:"#16a085"
+    },
+    {
+        name:"David_Gonzalez",
+        days:[
+            "2019/4/15",
+            "2019/4/23",
+            "2019/4/24"
+        ],
+        color:"#1abc9c"
+    },
+    {
+        name:"Andres",
+        days:[
+            "2019/4/15",
+            "2019/4/23",
+            "2019/4/24"
+        ],
+        color:"#27ae60"
+    },
+    {
+        name:"Pepe_Perez",
+        days:[
+            "2019/4/15",
+            "2019/4/23",
+            "2019/4/24"
+        ],
+        color:"#e67e22"
+    }
+    
+];
+let legendItems=[{items: []}]
+
+for(let employee of self.data){
+    legendItems[0].items.push({text:employee.name,color:employee.color,markerShape:"square"});
+}
+this.legendSections = ko.observableArray(legendItems);
       document.addEventListener("connect",function(){
           document.dispatchEvent(new Event("displayCalendar"));
       })

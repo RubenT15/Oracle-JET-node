@@ -77,7 +77,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojdatagrid','ojs/ojarraydatagrid
             fecfab: fecfabValue
         };
         console.log(todo);
-        fetch("http://localhost:3000/insertar", {
+        fetch("http://172.1.0.112:3000/insertar", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojdatagrid','ojs/ojarraydatagrid
         data.append('file',input.files[0]);
                 for(var dato of data){console.log(dato)};
 
-        fetch("http://localhost:3000/registrar", {
+        fetch("http://172.1.0.112:3000/registrar", {
                 method: 'POST',
                 
                 body: data

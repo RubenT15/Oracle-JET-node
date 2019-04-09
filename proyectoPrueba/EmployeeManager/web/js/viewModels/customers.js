@@ -22,7 +22,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojknockout','ojs/ojdatagrid','oj
             return 'width:160px;';
         };
       function cargarDatos(){
-          fetch("http://localhost:3000/data?opc=1",{
+          fetch("http://172.1.0.112:3000/data?opc=1",{
           
             header: {
               'Access-Control-Allow-Origin':'*'

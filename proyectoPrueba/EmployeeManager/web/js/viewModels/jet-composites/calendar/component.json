@@ -1,7 +1,23 @@
 {
+
     "name": "calendar",
+
     "description":"A calendar",
+
     "version":"1.0.0",
+
     "jetVersion": ">=6.2.0 <7.0.0",
-    "properties":{}
+
+    "properties":{
+
+        "employees":{
+
+            "description":"An array containing data from all the employees",
+
+            "type":"array"
+
+        }
+
+    }
+
 }

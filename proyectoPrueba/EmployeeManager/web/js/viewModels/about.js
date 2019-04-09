@@ -14,7 +14,7 @@ var aboutModel=define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojknockout','ojs/
       self.employees=ko.observable();
       
       function cargarDatos(){
-          fetch("http://localhost:3000/data?opc=2",{
+          fetch("http://172.1.0.112:3000/data?opc=2",{
           
             header: {
               'Access-Control-Allow-Origin':'*'
@@ -26,7 +26,7 @@ var aboutModel=define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojknockout','ojs/
                     empleado.name=empleado[0];
                     delete empleado[0];
                     if(empleado[1]!=null){
-                    empleado.avatar="http://localhost:8080/"+empleado[1];
+                    empleado.avatar="http://172.1.0.112:8080/"+empleado[1];
                     delete empleado[1];
                 }else{
                     empleado.avatar=empleado[1];

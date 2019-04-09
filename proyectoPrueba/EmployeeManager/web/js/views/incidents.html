@@ -3,5 +3,18 @@
  The Universal Permissive License (UPL), Version 1.0
  -->
 <div class="oj-hybrid-padding">
-    <custom-calendar></custom-calendar>
+
+    <div id='calendar-container'>
+
+        <custom-calendar employees="[[data]]"></custom-calendar>
+        
+        </div>
+    <div id='legend-container'>
+            <oj-legend id="legend1"
+                orientation='horizontal'
+                sections="[[legendSections]]"
+                style="position:fixed;max-width:200px;width:100%; height:auto;bottom:0%;right:0%;z-index:90000">
+            </oj-legend>
+        </div>
+
 </div>
